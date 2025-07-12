@@ -39,6 +39,12 @@ A beautiful, dark-themed email client built with Django and JavaScript. This pro
 
 ## 📱 Screenshots
 
+![Inbox](sample.png)
+*Browse your inbox*
+
+![Sent](sent.png)
+*See the emails you've sent*
+
 ### Login Page
 Beautiful, clean authentication with mbox branding
 
