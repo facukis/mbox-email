@@ -1,0 +1,560 @@
+/* Dark Mode Email Application Styles */
+
+/* CSS Variables for consistent theming */
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --bg-hover: #30363d;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --accent-blue: #58a6ff;
+    --accent-blue-hover: #388bfd;
+    --accent-green: #3fb950;
+    --accent-red: #f85149;
+    --accent-purple: #a5a5ff;
+    --border-color: #30363d;
+    --border-muted: #21262d;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --gradient-primary: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+    --gradient-accent: linear-gradient(135deg, #58a6ff 0%, #388bfd 100%);
+}
+
+/* Import Inter font for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global Reset and Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* App Header and Logo */
+.app-header {
+    background: var(--gradient-primary);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.logo-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.logo-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Container */
+.container {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 1200px;
+    min-height: calc(100vh - 40px);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    text-align: center;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-control:focus {
+    background: var(--bg-secondary);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.form-control:disabled {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Textarea specific styles */
+textarea.form-control {
+    min-height: 400px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Button Styles */
+.btn {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 4px;
+}
+
+.btn-primary {
+    background: var(--gradient-accent);
+    color: white;
+    box-shadow: var(--shadow-light);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    filter: brightness(1.1);
+}
+
+.btn-outline-primary {
+    background: transparent;
+    border: 2px solid var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.btn-outline-primary:hover {
+    background: var(--accent-blue);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary.active {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.btn-sm {
+    font-size: 13px;
+    padding: 8px 16px;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+/* HR Styling */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 24px 0;
+}
+
+/* Email List Styles */
+#emails-view {
+    margin-top: 20px;
+}
+
+.email-item {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.email-item:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.email-item.read {
+    opacity: 0.7;
+}
+
+.email-item.unread {
+    border-left: 4px solid var(--accent-blue);
+}
+
+.email-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.email-sender {
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.email-timestamp {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.email-subject {
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.email-preview {
+    color: var(--text-secondary);
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Compose View */
+#compose-view {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+}
+
+#compose-view h3 {
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+}
+
+/* Individual Email View */
+.email-view {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+}
+
+.email-view-header {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+}
+
+.email-view-from {
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.email-view-to {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.email-view-subject {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.email-view-timestamp {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.email-view-body {
+    color: var(--text-primary);
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* Archive/Unarchive Buttons */
+.email-actions {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-success {
+    background: var(--accent-green);
+    color: white;
+}
+
+.btn-success:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.btn-warning {
+    background: #fbbf24;
+    color: var(--bg-primary);
+}
+
+.btn-warning:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* Messages/Alerts */
+.message {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    padding: 12px 16px;
+}
+
+.message.error {
+    background: rgba(248, 81, 73, 0.1);
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+.message.success {
+    background: rgba(63, 185, 80, 0.1);
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* Links */
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-blue-hover);
+    text-decoration: underline;
+}
+
+/* Loading States */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    border-top-color: var(--accent-blue);
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Authentication Pages */
+.auth-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 0;
+}
+
+.auth-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+.auth-form {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-light);
+}
+
+.auth-form .form-group {
+    margin-bottom: 24px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.auth-footer p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Inbox Header */
+.inbox-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.inbox-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.inbox-subtitle {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+        border-radius: 12px;
+        min-height: calc(100vh - 20px);
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 2px 0;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Animation for page transitions */
+.container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

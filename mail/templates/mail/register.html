@@ -1,0 +1,35 @@
+{% extends "mail/layout.html" %}
+
+{% block body %}
+
+    <div class="auth-container">
+        <h2>Join mbox</h2>
+        <p class="auth-subtitle">Create your account to get started</p>
+
+        {% if message %}
+            <div class="message error">{{ message }}</div>
+        {% endif %}
+
+        <form action="{% url 'register' %}" method="post" class="auth-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input class="form-control" type="email" name="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" name="password" id="password" placeholder="Create a password">
+            </div>
+            <div class="form-group">
+                <label for="confirmation">Confirm Password</label>
+                <input class="form-control" type="password" name="confirmation" id="confirmation" placeholder="Confirm your password">
+            </div>
+            <input class="btn btn-primary btn-auth" type="submit" value="Create Account">
+        </form>
+
+        <div class="auth-footer">
+            <p>Already have an account? <a href="{% url 'login' %}">Sign in here</a></p>
+        </div>
+    </div>
+
+{% endblock %}
